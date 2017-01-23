@@ -25,6 +25,46 @@ public class HistorialClinico {
         this.idMedico = idMedico;
         this.observaciones = observaciones;
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public int getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(int fecha) {
+        this.fecha = fecha;
+    }
+
+    public int getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(int idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
+    public int getIdMedico() {
+        return idMedico;
+    }
+
+    public void setIdMedico(int idMedico) {
+        this.idMedico = idMedico;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
     
     public void verHistorialClinico(){
         

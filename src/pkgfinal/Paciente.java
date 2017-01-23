@@ -25,6 +25,47 @@ public class Paciente {
         this.edad = edad;
         this.genero = genero;
     }
+
+    public int getIdenficicacion() {
+        return idenficicacion;
+    }
+
+    public void setIdenficicacion(int idenficicacion) {
+        this.idenficicacion = idenficicacion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+    
     public void verPaciente(){
         JOptionPane.showMessageDialog(null, "La identicacion del paciente: "+idenficicacion+"\nEl nombre del paciente: "
                 +nombre+"\nEl apellido del paciente: "+apellidos+"\nLa edad del paciente: "+edad+"\nEl genero del paciente: ");
