@@ -16,21 +16,26 @@ import javax.swing.JOptionPane;
 public class Final {
     public static List<Medico> lista = new LinkedList<Medico>();
     public static List<Paciente> lista2 = new LinkedList<Paciente>();
+    public static List<HistorialClinico> lista3 = new LinkedList<HistorialClinico>();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      lista.add(new Medico(73788334, "Paul", "Ccosi", "Sistemas"));
+        lista.add(new Medico(73788334, "Paul", "Ccosi", "Sistemas"));
         
         lista2.add(new Paciente(73788334, "Gian", "Apaza", 18, "Masculino"));
+        
+        lista3.add(new HistorialClinico(15, 69, 12, 15, "Esta mal de corazon"));
+        
       int opt=0;    
         
         
-            opt = Integer.parseInt(JOptionPane.showInputDialog(null, "MENU DE MEDICO \n"+
-           "Historial Clinico----\n"+
+            opt = Integer.parseInt(JOptionPane.showInputDialog(null, "PROYECTO - FINAL\n"+
+           "    Historial Clinico\n"+
               "1:MENU - MEDICO\n"+
               "2:MENU - PACIENTE\n"+
-              "3:SALIR"));  
+              "3:MENU - HISTORIAL CLINICO\n"+      
+              "4:SALIR"));  
              switch(opt){
           case 1: {
               List<Medico> lista = new LinkedList<Medico>();
@@ -111,6 +116,41 @@ public class Final {
         int elemento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el elemento eliminar"));
         lista2.remove(elemento);
     }
+    {
+        List<HistorialClinico> lista3 = new LinkedList<HistorialClinico>();
+    int opt=0;
+              do{
+                  opt = Integer.parseInt(JOptionPane.showInputDialog(null,"MENU PACIENTE\n+"
+                          + "1: Agregar Historial\n+"
+                          + "2: Eliminar Historial\n+"
+                          + "3: Mostrar Historial\n+"
+                          + "4: Atras"));
+                  switch(opt){
+                      case 1: agregarH();break;
+                      case 2: eliminarH();break;
+                      case 3: mostrarH();break;
+                      case 4: opt = 0;break;
+                      default: JOptionPane.showMessageDialog(null, "la opcion no existe");
+                  }
+        }while(opt!=0);
+  }
+    private void mostrarH() {
+        for(int i=0;i<lista2.size();i++){
+        lista2.get(i).verPaciente();
+    }   
+        System.out.println("_____________________");
+    }     
+ private void agregarH() {
+       int codi =   Integer.parseInt(JOptionPane.showInputDialog("Ingrese codigo"));
+       int fec = Integer.parseInt(JOptionPane.showInputDialog("Ingrese fecha"));
+       int idP = Integer.parseInt(JOptionPane.showInputDialog("Ingrese idPaciente"));
+       int idM = Integer.parseInt(JOptionPane.showInputDialog("Ingrese idMedico"));
+       String obs = JOptionPane.showInputDialog("Ingrese observaciones");
+       lista3.add(new HistorialClinico(codi, fec, idP, idM, obs));
+    }
+    private void eliminarH() {
+        int elemento=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el elemento eliminar"));
+        lista2.remove(elemento);
+    }
+    }
     
-    
-}
